@@ -2,13 +2,17 @@ import java.util.ArrayList;
 
 public abstract class Person {
 	private ArrayList<Card> oneRoundCard;
-	public void setOneRoundCard(ArrayList<Card> cards){
-		oneRoundCard=cards;
+
+	public void setOneRoundCard(ArrayList<Card> cards) {
+		oneRoundCard = cards;
 	}
-	public ArrayList<Card> getOneRoundCard(){
+
+	public ArrayList<Card> getOneRoundCard() {
 		return oneRoundCard;
 	}
+
 	public abstract boolean hit_me(Table table);
+
 	public int getTotalValue() {
 		int Ace_count = 0;
 		int total_value = 0;
@@ -33,17 +37,19 @@ public abstract class Person {
 		}
 		return total_value;
 	}
+
 	public boolean hasAce() {
-		boolean hasAce= false;
+		boolean hasAce = false;
 		for (Card c : oneRoundCard) {
 			if (c.getRank() == 1) {
 				hasAce = true;
-			} 
+			}
 		}
 		return hasAce;
 	}
-	public void printAllCard(){
-		for(Card c : oneRoundCard){
+
+	public void printAllCard() {
+		for (Card c : oneRoundCard) {
 			c.printCard();
 		}
 	}
